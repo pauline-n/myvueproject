@@ -17,11 +17,11 @@
   
   <style scoped>
 .custom-button {
-  margin-right: 10px; /* Space between buttons */
+  margin-right: 10px; 
   background-color: #007bff;
   color: white;
   border: none;
-  padding: 10px 15px;
+  padding: 20px 25px;
   border-radius: 5px;
   cursor: pointer;
 }
