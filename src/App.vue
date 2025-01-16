@@ -1,47 +1,42 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div id="app">
+    <NavBar />
+    <h1>Men's Clothing Store</h1>
+    <clothing-item
+      v-for="(item, index) in items"
+      :key="index"
+      :name="item.name"
+      :price="item.price"
+      :description="item.description"
+    />
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script>
+import NavBar from './components/NavBar.vue';
+import ClothingItem from './components/ClothingItem.vue';
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+export default {
+  components: {
+    NavBar,
+    ClothingItem,
+  },
+  data() {
+    return {
+      items: [
+        { name: 'Casual Shirt', price: 'Shs 25000', description: 'A comfortable cotton shirt.' },
+        { name: 'Formal Trousers', price: 'SHs 40000', description: 'Perfect for office wear.' },
+        { name: 'Leather Jacket', price: 'Shs 100000', description: 'Stylish and warm.' }
+      ],
+    };
+  },
+};
+</script>
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+<style>
+#app {
+  text-align: center;
+  font-family: Arial, sans-serif;
 }
 </style>
+
