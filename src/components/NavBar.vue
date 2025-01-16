@@ -1,9 +1,9 @@
 <template>
     <nav class="navbar">
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#about">About Fashion</a></li>
+        <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="/blog">Blog</router-link></li>
+        <li><router-link to="/about">About Fashion</router-link></li>
       </ul>
     </nav>
   </template>
@@ -11,35 +11,25 @@
   <script>
   export default {
     // eslint-disable-next-line vue/multi-word-component-names
-    name: 'Navbar',
+    name: 'NavBar',
   };
   </script>
   
-  <style scoped>
+  <style>
   .navbar {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
+    background: #333;
+    padding: 10px;
   }
-  
   .navbar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
+    list-style: none;
   }
-  
   .navbar li {
-    margin-right: 20px;
+    margin-right: 15px;
   }
-  
   .navbar a {
     color: white;
     text-decoration: none;
-  }
-  
-  .navbar a:hover {
-    text-decoration: underline;
   }
   </style>
   
